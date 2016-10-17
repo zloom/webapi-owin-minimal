@@ -1,11 +1,6 @@
 ﻿namespace Api
 
 open System.Web.Http
-open System.Net.Http
-open System.Reflection
-open System.Web.Http.Filters
-open System.Web.Http.Controllers
-open System.Runtime.InteropServices
 
 open global.Owin
 
@@ -23,5 +18,5 @@ type Startup() =
         config.MapHttpAttributeRoutes()
         config.Filters.Add(DefaultParameterValueFilter())     
      
-        app.UseWebApi(config)
+        app.UseWebApi(config) |> ignore
 
